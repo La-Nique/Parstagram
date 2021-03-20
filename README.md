@@ -1,6 +1,6 @@
-# Parstagram - Part II
+# Instagram / Parstagram - Part II
 
-This is an Instagram clone with a custom Parse backend that allows a user to post photos, view a global photos feed, and add comments!
+An Instagram clone with a custom backend that allows a user to make their own account and password, post photos, view a global photos feed, and add comments!
 
 Time spent: **X** hours spent in total
 

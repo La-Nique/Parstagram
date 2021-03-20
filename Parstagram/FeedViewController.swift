@@ -20,6 +20,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        //tableView.rowHeight = UITableView.automaticDimension // 400
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +35,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         query.findObjectsInBackground{(posts, error) in // fetch the data/query
             if posts != nil {
                 self.posts = posts! // store your data
+                self.posts.reverse() // reverses the order in which the posts are being added/displayed.
                 self.tableView.reloadData() // reload the table view.
             }
         }
@@ -55,7 +59,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let url = URL(string:urlString)!
         
         cell.photoView.af_setImage(withURL: url)
-        
+        cell.layoutSubviews()
         return cell
     }
     
@@ -69,5 +73,21 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut() // will logout user and clear cache
+        
+        //once we log out we are now switched to the login screen:
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        let delegate = UIApplication.shared.delegate as! SceneDelegate
+        
+        delegate.window?.rootViewController = loginViewController
+    }
+    
+    
+    
+    
+    
 
 }

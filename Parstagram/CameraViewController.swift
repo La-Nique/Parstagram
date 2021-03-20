@@ -37,7 +37,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
          */
         
-        let post = PFObject(className: "Pots")
+        let post = PFObject(className: "Posts")
         
         post["caption"] = commentField.text!
         post["author"] = PFUser.current()!
