@@ -51,4 +51,8 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src= "https://media.giphy.com/media/Ri3Fr9c7LHWAcJmvrU/giphy.gif" width='400'>
+
+### Notes
+
+I had a bug in the Table View. Took hours to attempt to debug, but realized that there was nothing I could do to fix this because my code was 100% correct. I had to redo my entire ux-ui over as well as all configurations just to make the data display.
